@@ -1,72 +1,46 @@
 {
-  "name": "rcm/admin",
-  "description": "Provides all the basic admin screens for the Reliv Content manager",
-  "license": "BSD-3-Clause",
+  "name": "rcm/core",
+  "description": "Reliv Content Management System",
+  "type": "library",
+  "license": "ISC",
   "keywords": [
     "reliv",
     "content",
     "manager",
-    "plugin",
-    "rcm"
+    "module",
+    "zf2"
   ],
   "homepage": "http://www.reliv.com/",
-  "authors": [
-    {
-      "name": "Westin Shafer",
-      "email": "wshafer@relivinc.com",
-      "homepage": "http://www.reliv.com"
-    },
-    {
-      "name": "Rod McNew",
-      "email": "rmcnew@relivinc.com",
-      "homepage": "http://www.reliv.com/"
-    },
-    {
-      "name": "Brian Janish",
-      "email": "bjanish@relivinc.com",
-      "homepage": "http://www.reliv.com/"
-    },
-    {
-      "name": "James Jervis",
-      "email": "jjervis@relivinc.com",
-      "homepage": "http://www.reliv.com/"
-    },
-    {
-      "name": "Inna Davis",
-      "email": "idavis@relivinc.com",
-      "homepage": "http://www.reliv.com/"
-    }
-  ],
-  "suggest":{
-    "bower-asset/angular": "~1",
-    "bower-asset/angular-utils-pagination": "~0.9",
-    "bower-asset/rcm-loading": ">=0.1.14",
-    "bower-asset/rcm-html-editor": ">=0.4.0",
-    "bower-asset/rcm-dialog": ">=0.2.0"
-  },
   "require": {
-    "php": ">=5.5",
-    "reliv/zf-config-factories": "3.* || 4.*",
+    "php": ">=7",
+    "container-interop/container-interop": "^1",
+    "doctrine/doctrine-orm-module": "1.*",
+    "http-interop/http-middleware": "~0.4",
+    "psr/http-message": "^1.0",
+    "rcm/user": "~1.5",
+    "rcm/api-lib": "~0.11",
     "rcm/core": "~1.21",
     "rcm/core-js": "~1.1",
     "rcm/user": "~1.5",
     "rcm/user-ui": "1.*",
-    "zendframework/zend-form": "2.*",
+    "reliv/pipe-rat": "~0.5",
+    "reliv/white-rat": "^0.2.0",
+    "reliv/zf-config-factories": "3.* || 4.*",
+    "rwoverdijk/assetmanager": "1.*",
+    "zendframework/zend-cache": "2.*",
+    "zendframework/zend-console": "2.*",
+    "zendframework/zend-diactoros": "1.*",
+    "zendframework/zend-eventmanager": "2.*",
     "zendframework/zend-filter": "2.*",
     "zendframework/zend-http": "2.*",
-    "zendframework/zend-i18n": "2.*",
-    "zendframework/zend-inputfilter": "2.*",
+    "zendframework/zend-json": "2.*",
+    "zendframework/zend-log": "2.*",
     "zendframework/zend-mvc": "2.*",
-    "zendframework/zend-navigation": "2.*",
-    "zendframework/zend-paginator": "2.*",
     "zendframework/zend-servicemanager": "2.*",
+    "zendframework/zend-session": "2.*",
     "zendframework/zend-stdlib": "2.*",
     "zendframework/zend-validator": "2.*",
-    "zendframework/zend-view": "2.*"
-  },
-  "undocumented-require": {
-    "NOTE": "(03/2016) The dependencies for this package are not well defined at this time",
-    "jqueryui": "??"
+    "zendframework/zend-view": "2.*",
   },
   "require-dev": {
     "phpunit/phpunit": "5.*",
@@ -74,7 +48,12 @@
   },
   "autoload": {
     "psr-4": {
-      "RcmAdmin\\": "src/"
+      "Rcm\\ImmutableHistory\\": "immutable-history/src/",
+      "RcmAdmin\\": "admin/src/",
+      "Rcm\\": "core/src/"
     }
+  },
+  "suggest": {
+    "rcm/core-js": "Provides basic JS including jQuery, AngularJS and Bootstrap"
   }
 }
